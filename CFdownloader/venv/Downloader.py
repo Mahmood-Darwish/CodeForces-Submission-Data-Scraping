@@ -26,7 +26,7 @@ for submission in problems['result']:
     submission['problem']['name'] = ''.join(filter(whitelist.__contains__, submission['problem']['name']))
     if(len(submission['problem']['name']) == 0):
         continue
-    if(submission['problem']['name'][-1] == ' '):
+    while(len(submission['problem']['name']) > 0 and submission['problem']['name'][-1] == ' '):
       submission['problem']['name'] = submission['problem']['name'][:-1]
     Path(filepath + "\\%s" %submission['problem']['name']).mkdir(parents=True, exist_ok=True)
     if (submission['programmingLanguage'] == "Java 8"):
