@@ -27,7 +27,7 @@ for submission in problems['result']:
     if(len(submission['problem']['name']) == 0):
         continue
     while(len(submission['problem']['name']) > 0 and submission['problem']['name'][-1] == ' '):
-      submission['problem']['name'] = submission['problem']['name'][:-1]
+        submission['problem']['name'] = submission['problem']['name'][:-1]
     Path(filepath + "\\%s" %submission['problem']['name']).mkdir(parents=True, exist_ok=True)
     if (submission['programmingLanguage'] == "Java 8"):
         f = open(filepath + "\\%s" %submission['problem']['name'] + "\\%s.txt" %submission['problem']['name'], "w")
